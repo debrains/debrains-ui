@@ -1,15 +1,12 @@
-import axios from 'axios';
-
 export const signFactory = ({ baseUrl }) => {
+  const { origin } = window.location;
+
   // NOTE 구글 회원가입 & 로그인
-  const getGoogleSignin = async () => {
-    return axios
-      .get(`${baseUrl}/google`)
-      .then((res) => res.data)
-      .catch((e) => e);
-  };
+  const getGoogleSignIn = () => `${baseUrl}/google?redirect_uri=${origin}/oauth2/redirect`;
+  const getGithubSignIn = () => `${baseUrl}/github?redirect_uri=${origin}/oauth2/redirect`;
 
   return {
-    getGoogleSignin,
+    getGoogleSignIn,
+    getGithubSignIn,
   };
 };
