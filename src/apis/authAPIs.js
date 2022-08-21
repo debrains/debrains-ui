@@ -1,3 +1,3 @@
-export const authFactory = ({ baseUrl }) => {
+export const authFactory = () => {
   return {};
 };

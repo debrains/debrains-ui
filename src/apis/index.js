@@ -1,7 +1,7 @@
 import { signFactory } from './signAPIs';
 import { authFactory } from './authAPIs';
 
-const baseUrl = process.env.API_URL;
+const baseUrl = process.env.REACT_APP_API_URL;
 
 const signAPIs = signFactory({
   baseUrl: `${baseUrl}/oauth2/authorization`,
